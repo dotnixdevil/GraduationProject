@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomerType"
+  Version="11.1.1.51.56"
+  DBObjectType="table"
+  DBObjectName="CUSTOMER_TYPE"
+  AliasName="CustomerType"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Type"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="TYPE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="CUSTOMER_TYPE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Desc1"
+    Precision="55"
+    ColumnName="DESC"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="CUSTOMER_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="55"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Customer"
+    Association="view.CustomerCustomerTypeFk1Assoc"
+    AssociationEnd="view.CustomerCustomerTypeFk1Assoc.Customer"
+    AssociationOtherEnd="view.CustomerCustomerTypeFk1Assoc.CustomerType"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="CustomerTypePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CUSTOMER_TYPE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="view.CustomerType.Type"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC004141">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C004141"/>
+      <Attr Name="_checkCondition" Value='"TYPE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="view.CustomerType.Type"/>
+    </AttrArray>
+  </Key>
+</Entity>

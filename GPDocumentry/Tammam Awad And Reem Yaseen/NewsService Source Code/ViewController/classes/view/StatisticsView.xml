@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="StatisticsView"
+  Version="11.1.1.51.56"
+  SelectList="Statistics.MOBILE_ST, 
+       Statistics.WEB_ST, 
+       Statistics.HOME_ST, 
+       Statistics.ROWID"
+  FromList="STATISTICS Statistics"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Statistics"
+    Entity="view.Statistics"/>
+  <ViewAttribute
+    Name="MobileSt"
+    PrecisionRule="true"
+    EntityAttrName="MobileSt"
+    EntityUsage="Statistics"
+    AliasName="MOBILE_ST"/>
+  <ViewAttribute
+    Name="WebSt"
+    PrecisionRule="true"
+    EntityAttrName="WebSt"
+    EntityUsage="Statistics"
+    AliasName="WEB_ST"/>
+  <ViewAttribute
+    Name="HomeSt"
+    PrecisionRule="true"
+    EntityAttrName="HomeSt"
+    EntityUsage="Statistics"
+    AliasName="HOME_ST"/>
+  <ViewAttribute
+    Name="RowID"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="RowID"
+    EntityUsage="Statistics"
+    AliasName="ROWID"/>
+</ViewObject>

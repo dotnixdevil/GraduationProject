@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://project1/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MyWebService1" targetNamespace="http://project1/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:7101/WebService-Project1-context-root/MyWebService1SoapHttpPort?xsd=1" namespace="http://project1/" />
+    </xsd:schema>
+  </types>
+  <message name="getNews">
+    <part name="parameters" element="tns:getNews" />
+  </message>
+  <message name="getNewsResponse">
+    <part name="parameters" element="tns:getNewsResponse" />
+  </message>
+  <message name="getNewsTitle">
+    <part name="parameters" element="tns:getNewsTitle" />
+  </message>
+  <message name="getNewsTitleResponse">
+    <part name="parameters" element="tns:getNewsTitleResponse" />
+  </message>
+  <message name="getNewsType">
+    <part name="parameters" element="tns:getNewsType" />
+  </message>
+  <message name="getNewsTypeResponse">
+    <part name="parameters" element="tns:getNewsTypeResponse" />
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <portType name="MyWebService1">
+    <operation name="getNews">
+      <input message="tns:getNews" />
+      <output message="tns:getNewsResponse" />
+    </operation>
+    <operation name="getNewsTitle">
+      <input message="tns:getNewsTitle" />
+      <output message="tns:getNewsTitleResponse" />
+    </operation>
+    <operation name="getNewsType">
+      <input message="tns:getNewsType" />
+      <output message="tns:getNewsTypeResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+  </portType>
+  <binding name="MyWebService1SoapHttpPortBinding" type="tns:MyWebService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getNews">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNewsTitle">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getNewsType">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="MyWebService1">
+    <port name="MyWebService1SoapHttpPort" binding="tns:MyWebService1SoapHttpPortBinding">
+      <soap:address location="http://localhost:7101/WebService-Project1-context-root/MyWebService1SoapHttpPort" />
+    </port>
+  </service>
+</definitions>

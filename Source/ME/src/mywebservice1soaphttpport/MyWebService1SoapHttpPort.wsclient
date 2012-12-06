@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsclientconfig serviceType="jsr-172" version="1.0">
+    <client>
+        <project>GPMETrial</project>
+        <class location="${src.dir}" type="mywebservice1soaphttpport.MyWebService1SoapHttpPort"/>
+        <property name="DataBinding" value="false"/>
+        <property name="cldc11" value="true"/>
+    </client>
+    <services>
+        <service file="MyWebService1SoapHttpPort.wsdl" url="http://192.168.0.2:7101/WebService-Project1-context-root/MyWebService1SoapHttpPort?wsdl"/>
+    </services>
+</wsclientconfig>

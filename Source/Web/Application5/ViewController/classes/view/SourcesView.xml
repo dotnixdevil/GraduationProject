@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SourcesView"
+  Version="11.1.1.51.56"
+  SelectList="Sources.STYPE, 
+       Sources.SNAME, 
+       Sources.SADDRESS"
+  FromList="SOURCES Sources"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Sources"
+    Entity="view.Sources"/>
+  <ViewAttribute
+    Name="Stype"
+    PrecisionRule="true"
+    EntityAttrName="Stype"
+    EntityUsage="Sources"
+    AliasName="STYPE"/>
+  <ViewAttribute
+    Name="Sname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Sname"
+    EntityUsage="Sources"
+    AliasName="SNAME"/>
+  <ViewAttribute
+    Name="Saddress"
+    PrecisionRule="true"
+    EntityAttrName="Saddress"
+    EntityUsage="Sources"
+    AliasName="SADDRESS"/>
+</ViewObject>

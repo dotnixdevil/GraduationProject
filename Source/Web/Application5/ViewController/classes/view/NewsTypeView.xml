@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="NewsTypeView"
+  Version="11.1.1.51.56"
+  SelectList="NewsType.TYPE, 
+       NewsType.DESC"
+  FromList="NEWS_TYPE NewsType"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="NewsType"
+    Entity="view.NewsType"/>
+  <ViewAttribute
+    Name="Type"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Type"
+    EntityUsage="NewsType"
+    AliasName="TYPE"/>
+  <ViewAttribute
+    Name="Desc1"
+    PrecisionRule="true"
+    EntityAttrName="Desc1"
+    EntityUsage="NewsType"
+    AliasName="DESC"/>
+  <ViewLinkAccessor
+    Name="NewsView"
+    ViewLink="view.NewsNewsTypeFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

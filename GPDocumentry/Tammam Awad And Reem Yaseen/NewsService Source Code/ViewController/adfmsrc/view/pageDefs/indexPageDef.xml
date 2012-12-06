@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.56" id="indexPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="NewsView1_1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="NewsView1_1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="NewsView1_1Iterator" id="NewsView1_1">
+      <nodeDefinition DefName="view.NewsView1">
+        <AttrNames>
+          <Item Value="Sname"/>
+          <Item Value="Wname"/>
+          <Item Value="Tittle"/>
+          <Item Value="Subject"/>
+          <Item Value="Img"/>
+          <Item Value="Ntype"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

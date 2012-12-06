@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="WrittersView"
+  Version="11.1.1.51.56"
+  SelectList="Writters.WNAME, 
+       Writters.WFNAME, 
+       Writters.WLNAME, 
+       Writters.WPASS, 
+       Writters.WEMAIL, 
+       Writters.WTPE"
+  FromList="WRITTERS Writters"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Writters"
+    Entity="view.Writters"/>
+  <ViewAttribute
+    Name="Wname"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Wname"
+    EntityUsage="Writters"
+    AliasName="WNAME"/>
+  <ViewAttribute
+    Name="Wfname"
+    PrecisionRule="true"
+    EntityAttrName="Wfname"
+    EntityUsage="Writters"
+    AliasName="WFNAME"/>
+  <ViewAttribute
+    Name="Wlname"
+    PrecisionRule="true"
+    EntityAttrName="Wlname"
+    EntityUsage="Writters"
+    AliasName="WLNAME"/>
+  <ViewAttribute
+    Name="Wpass"
+    PrecisionRule="true"
+    EntityAttrName="Wpass"
+    EntityUsage="Writters"
+    AliasName="WPASS"/>
+  <ViewAttribute
+    Name="Wemail"
+    PrecisionRule="true"
+    EntityAttrName="Wemail"
+    EntityUsage="Writters"
+    AliasName="WEMAIL"/>
+  <ViewAttribute
+    Name="Wtpe"
+    PrecisionRule="true"
+    EntityAttrName="Wtpe"
+    EntityUsage="Writters"
+    AliasName="WTPE"/>
+</ViewObject>

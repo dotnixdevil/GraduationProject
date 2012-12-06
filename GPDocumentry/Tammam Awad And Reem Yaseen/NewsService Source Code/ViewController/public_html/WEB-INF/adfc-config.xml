@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="admin">
+    <page>/admin.jspx</page>
+  </view>
+  <view id="AddNews">
+    <page>/AddNews.jspx</page>
+  </view>
+  <view id="support">
+    <page>/support.jspx</page>
+  </view>
+  <method-call id="CreateInsert">
+    <method>#{bindings.CreateInsert.execute}</method>
+    <outcome>
+      <fixed-outcome>CreateInsert</fixed-outcome>
+    </outcome>
+  </method-call>
+  <view id="video">
+    <page>/video.jspx</page>
+  </view>
+  <view id="index">
+    <page>/index.jspx</page>
+  </view>
+  <view id="rigister">
+    <page>/rigister.jspx</page>
+  </view>
+  <control-flow-rule>
+    <from-activity-id>admin</from-activity-id>
+    <control-flow-case>
+      <from-outcome>addnews</from-outcome>
+      <to-activity-id>AddNews</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>AddNews</from-activity-id>
+    <control-flow-case>
+      <from-outcome>back</from-outcome>
+      <to-activity-id>admin</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>support</from-activity-id>
+    <control-flow-case>
+      <from-outcome>writter</from-outcome>
+      <to-activity-id>CreateInsert</to-activity-id>
+    </control-flow-case>
+    <control-flow-case>
+      <from-outcome>cp</from-outcome>
+      <to-activity-id>admin</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>CreateInsert</from-activity-id>
+    <control-flow-case>
+      <from-outcome>CreateInsert</from-outcome>
+      <to-activity-id>AddNews</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean>
+    <managed-bean-name>backing_index</managed-bean-name>
+    <managed-bean-class>view.backing.Index</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1index.jspx-->
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>backing_triall</managed-bean-name>
+    <managed-bean-class>view.backing.Triall</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1triall.jspx-->
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>backing_triall2</managed-bean-name>
+    <managed-bean-class>view.backing.Triall</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:2view/backing/triall.jspx-->
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>backing_triall3</managed-bean-name>
+    <managed-bean-class>view.backing.Triall2</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1triall.jspx-->
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>backing_support</managed-bean-name>
+    <managed-bean-class>view.backing.Support</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1support.jspx-->
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>backing_rigister</managed-bean-name>
+    <managed-bean-class>view.backing.Rigister</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1rigister.jspx-->
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>backing_video</managed-bean-name>
+    <managed-bean-class>view.backing.Video</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1video.jspx-->
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>backing_admin</managed-bean-name>
+    <managed-bean-class>view.backing.Admin</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1admin.jspx-->
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>backing_AddNews</managed-bean-name>
+    <managed-bean-class>view.backing.AddNews</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1AddNews.jspx-->
+  </managed-bean>
+</adfc-config>

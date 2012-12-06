@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.56" id="adminPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="CustomerView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="CustomerView1Iterator"/>
+    <iterator Binds="WrittersView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="WrittersView1Iterator"/>
+    <iterator Binds="SourcesView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="SourcesView1Iterator"/>
+    <iterator Binds="AdminView1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="AdminView1Iterator"/>
+    <iterator Binds="News1View1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="News1View1Iterator"/>
+    <iterator Binds="StatisticsView1" RangeSize="-1"
+              DataControl="AppModuleDataControl" id="StatisticsView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CustomerView1Iterator" id="CustomerView1">
+      <nodeDefinition DefName="view.CustomerView">
+        <AttrNames>
+          <Item Value="Cfname"/>
+          <Item Value="Clname"/>
+          <Item Value="Cname"/>
+          <Item Value="Cemail"/>
+          <Item Value="Cpass"/>
+          <Item Value="Ctype"/>
+          <Item Value="Bdate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="CustomerView1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="CustomerView1Iterator" id="Delete"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="CustomerView1Iterator" id="Execute"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+    <tree IterBinding="WrittersView1Iterator" id="WrittersView1">
+      <nodeDefinition DefName="view.WrittersView">
+        <AttrNames>
+          <Item Value="Wfname"/>
+          <Item Value="Wlname"/>
+          <Item Value="Wname"/>
+          <Item Value="Wpass"/>
+          <Item Value="Wemail"/>
+          <Item Value="Wtpe"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="WrittersView1Iterator" id="CreateInsert1"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="WrittersView1Iterator" id="Delete1"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="WrittersView1Iterator" id="Execute1"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <tree IterBinding="SourcesView1Iterator" id="SourcesView1">
+      <nodeDefinition DefName="view.SourcesView">
+        <AttrNames>
+          <Item Value="Stype"/>
+          <Item Value="Sname"/>
+          <Item Value="Saddress"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SourcesView1Iterator" id="CreateInsert2"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="SourcesView1Iterator" id="Delete2"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="SourcesView1Iterator" id="Execute2"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <tree IterBinding="AdminView1Iterator" id="AdminView1">
+      <nodeDefinition DefName="view.AdminView">
+        <AttrNames>
+          <Item Value="Fname"/>
+          <Item Value="Lname"/>
+          <Item Value="Uname"/>
+          <Item Value="Pass"/>
+          <Item Value="Email"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="AdminView1Iterator" id="CreateInsert3"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="AdminView1Iterator" id="Delete3"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="AdminView1Iterator" id="Execute3"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <tree IterBinding="News1View1Iterator" id="News1View1">
+      <nodeDefinition DefName="view.News1View">
+        <AttrNames>
+          <Item Value="Nid"/>
+          <Item Value="Sname"/>
+          <Item Value="Wname"/>
+          <Item Value="Tittle"/>
+          <Item Value="Img"/>
+          <Item Value="Ntype"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="News1View1Iterator" id="CreateInsert4"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="News1View1Iterator" id="Delete4"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="News1View1Iterator" id="Execute4"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <graph IterBinding="StatisticsView1Iterator" id="StatisticsView1"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
+      <graphDataMap leafOnly="true">
+        <series>
+          <data>
+            <item value="MobileSt"/>
+            <item value="HomeSt"/>
+            <item value="WebSt"/>
+          </data>
+        </series>
+        <groups/>
+      </graphDataMap>
+    </graph>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

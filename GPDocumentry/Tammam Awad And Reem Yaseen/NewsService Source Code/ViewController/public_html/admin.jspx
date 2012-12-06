@@ -1,0 +1,572 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document binding="#{backingBeanScope.backing_admin.document1}"
+                 id="document1">
+      <af:messages binding="#{backingBeanScope.backing_admin.messages1}"
+                   id="messages1"/>
+      <af:form binding="#{backingBeanScope.backing_admin.form1}" id="form1">
+        <af:panelBox
+                     binding="#{backingBeanScope.backing_admin.panelBox1}"
+                     id="panelBox1" showDisclosure="false" icon="/CP.png"
+                     inlineStyle="width:1271px;">
+          <f:facet name="toolbar"/>
+          <af:panelTabbed binding="#{backingBeanScope.backing_admin.panelTabbed1}"
+                          id="panelTabbed1"
+                          inlineStyle="width:1258px; height:359px;"
+                          position="both">
+            <af:showDetailItem text="Customers"
+                               binding="#{backingBeanScope.backing_admin.showDetailItem1}"
+                               id="showDetailItem1">
+              <af:toolbar binding="#{backingBeanScope.backing_admin.toolbar1}"
+                          id="toolbar1">
+                <af:commandButton actionListener="#{bindings.Delete.execute}"
+                                  text="Delete"
+                                  disabled="#{!bindings.Delete.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton2}"
+                                  id="commandButton2"
+                                  partialTriggers="table1 table5"
+                                  icon="/Delete24.png"/>
+                <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+                                  text="Add Customer"
+                                  disabled="#{!bindings.CreateInsert.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton1}"
+                                  id="commandButton1"
+                                  partialTriggers="table1 table5"
+                                  icon="/Add24.png"/>
+                <af:commandButton actionListener="#{bindings.Execute.execute}"
+                                  text="Update"
+                                  disabled="#{!bindings.Execute.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton3}"
+                                  id="commandButton3"
+                                  partialTriggers="table1 table2"
+                                  icon="/Refresh24.png"/>
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Save"
+                                  disabled="#{!bindings.Commit.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton4}"
+                                  id="commandButton4" icon="/Save24.png"/>
+              </af:toolbar>
+              <af:table value="#{bindings.CustomerView1.collectionModel}"
+                        var="row" rows="#{bindings.CustomerView1.rangeSize}"
+                        emptyText="#{bindings.CustomerView1.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.CustomerView1.rangeSize}"
+                        selectedRowKeys="#{bindings.CustomerView1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.CustomerView1.collectionModel.makeCurrent}"
+                        rowSelection="single"
+                        binding="#{backingBeanScope.backing_admin.table1}"
+                        id="table1" width="1294">
+                <af:column sortProperty="Cfname" sortable="false"
+                           headerText="FirstName">
+                  <af:inputText value="#{row.bindings.Cfname.inputValue}"
+                                label="#{bindings.CustomerView1.hints.Cfname.label}"
+                                required="#{bindings.CustomerView1.hints.Cfname.mandatory}"
+                                columns="#{bindings.CustomerView1.hints.Cfname.displayWidth}"
+                                maximumLength="#{bindings.CustomerView1.hints.Cfname.precision}"
+                                shortDesc="#{bindings.CustomerView1.hints.Cfname.tooltip}">
+                    <f:validator binding="#{row.bindings.Cfname.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Clname" sortable="false"
+                           headerText="LastName">
+                  <af:inputText value="#{row.bindings.Clname.inputValue}"
+                                label="#{bindings.CustomerView1.hints.Clname.label}"
+                                required="#{bindings.CustomerView1.hints.Clname.mandatory}"
+                                columns="#{bindings.CustomerView1.hints.Clname.displayWidth}"
+                                maximumLength="#{bindings.CustomerView1.hints.Clname.precision}"
+                                shortDesc="#{bindings.CustomerView1.hints.Clname.tooltip}">
+                    <f:validator binding="#{row.bindings.Clname.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Cname" sortable="false"
+                           headerText="UserName">
+                  <af:inputText value="#{row.bindings.Cname.inputValue}"
+                                label="#{bindings.CustomerView1.hints.Cname.label}"
+                                required="#{bindings.CustomerView1.hints.Cname.mandatory}"
+                                columns="#{bindings.CustomerView1.hints.Cname.displayWidth}"
+                                maximumLength="#{bindings.CustomerView1.hints.Cname.precision}"
+                                shortDesc="#{bindings.CustomerView1.hints.Cname.tooltip}">
+                    <f:validator binding="#{row.bindings.Cname.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Cemail" sortable="false"
+                           headerText="Email">
+                  <af:inputText value="#{row.bindings.Cemail.inputValue}"
+                                label="#{bindings.CustomerView1.hints.Cemail.label}"
+                                required="#{bindings.CustomerView1.hints.Cemail.mandatory}"
+                                columns="#{bindings.CustomerView1.hints.Cemail.displayWidth}"
+                                maximumLength="#{bindings.CustomerView1.hints.Cemail.precision}"
+                                shortDesc="#{bindings.CustomerView1.hints.Cemail.tooltip}">
+                    <f:validator binding="#{row.bindings.Cemail.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Cpass" sortable="false"
+                           headerText="PassWord">
+                  <af:inputText value="#{row.bindings.Cpass.inputValue}"
+                                label="#{bindings.CustomerView1.hints.Cpass.label}"
+                                required="#{bindings.CustomerView1.hints.Cpass.mandatory}"
+                                columns="#{bindings.CustomerView1.hints.Cpass.displayWidth}"
+                                maximumLength="#{bindings.CustomerView1.hints.Cpass.precision}"
+                                shortDesc="#{bindings.CustomerView1.hints.Cpass.tooltip}">
+                    <f:validator binding="#{row.bindings.Cpass.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Ctype" sortable="false"
+                           headerText="Type">
+                  <af:inputText value="#{row.bindings.Ctype.inputValue}"
+                                label="#{bindings.CustomerView1.hints.Ctype.label}"
+                                required="#{bindings.CustomerView1.hints.Ctype.mandatory}"
+                                columns="#{bindings.CustomerView1.hints.Ctype.displayWidth}"
+                                maximumLength="#{bindings.CustomerView1.hints.Ctype.precision}"
+                                shortDesc="#{bindings.CustomerView1.hints.Ctype.tooltip}">
+                    <f:validator binding="#{row.bindings.Ctype.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Bdate" sortable="false"
+                           headerText="BirthDate">
+                  <af:inputText value="#{row.bindings.Bdate.inputValue}"
+                                label="#{bindings.CustomerView1.hints.Bdate.label}"
+                                required="#{bindings.CustomerView1.hints.Bdate.mandatory}"
+                                columns="#{bindings.CustomerView1.hints.Bdate.displayWidth}"
+                                maximumLength="#{bindings.CustomerView1.hints.Bdate.precision}"
+                                shortDesc="#{bindings.CustomerView1.hints.Bdate.tooltip}">
+                    <f:validator binding="#{row.bindings.Bdate.validator}"/>
+                  </af:inputText>
+                </af:column>
+              </af:table>
+            </af:showDetailItem>
+            <af:showDetailItem text="Writters"
+                               binding="#{backingBeanScope.backing_admin.showDetailItem2}"
+                               id="showDetailItem2">
+              <af:toolbar binding="#{backingBeanScope.backing_admin.toolbar2}"
+                          id="toolbar2">
+                <af:commandButton actionListener="#{bindings.Delete1.execute}"
+                                  text="Delete Writter"
+                                  disabled="#{!bindings.Delete1.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton6}"
+                                  id="commandButton6"
+                                  partialTriggers="table2 table5"
+                                  icon="/Delete24.png"/>
+                <af:commandButton actionListener="#{bindings.CreateInsert1.execute}"
+                                  text="AddWritter"
+                                  disabled="#{!bindings.CreateInsert1.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton5}"
+                                  id="commandButton5"
+                                  partialTriggers="table2 table5"
+                                  icon="/Add24.png"/>
+                <af:commandButton actionListener="#{bindings.Execute1.execute}"
+                                  text="Update"
+                                  disabled="#{!bindings.Execute1.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton7}"
+                                  id="commandButton7" partialTriggers="table2"
+                                  icon="/Refresh24.png"/>
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Save"
+                                  disabled="#{!bindings.Commit.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton8}"
+                                  id="commandButton8" icon="/Save24.png"/>
+              </af:toolbar>
+              <af:table value="#{bindings.WrittersView1.collectionModel}"
+                        var="row" rows="#{bindings.WrittersView1.rangeSize}"
+                        emptyText="#{bindings.WrittersView1.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.WrittersView1.rangeSize}"
+                        selectedRowKeys="#{bindings.WrittersView1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.WrittersView1.collectionModel.makeCurrent}"
+                        rowSelection="single"
+                        binding="#{backingBeanScope.backing_admin.table2}"
+                        id="table2" width="1284">
+                <af:column sortProperty="Wfname" sortable="false"
+                           headerText="FirstName">
+                  <af:inputText value="#{row.bindings.Wfname.inputValue}"
+                                label="#{bindings.WrittersView1.hints.Wfname.label}"
+                                required="#{bindings.WrittersView1.hints.Wfname.mandatory}"
+                                columns="#{bindings.WrittersView1.hints.Wfname.displayWidth}"
+                                maximumLength="#{bindings.WrittersView1.hints.Wfname.precision}"
+                                shortDesc="#{bindings.WrittersView1.hints.Wfname.tooltip}">
+                    <f:validator binding="#{row.bindings.Wfname.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Wlname" sortable="false"
+                           headerText="LastName">
+                  <af:inputText value="#{row.bindings.Wlname.inputValue}"
+                                label="#{bindings.WrittersView1.hints.Wlname.label}"
+                                required="#{bindings.WrittersView1.hints.Wlname.mandatory}"
+                                columns="#{bindings.WrittersView1.hints.Wlname.displayWidth}"
+                                maximumLength="#{bindings.WrittersView1.hints.Wlname.precision}"
+                                shortDesc="#{bindings.WrittersView1.hints.Wlname.tooltip}">
+                    <f:validator binding="#{row.bindings.Wlname.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Wname" sortable="false"
+                           headerText="UserName">
+                  <af:inputText value="#{row.bindings.Wname.inputValue}"
+                                label="#{bindings.WrittersView1.hints.Wname.label}"
+                                required="#{bindings.WrittersView1.hints.Wname.mandatory}"
+                                columns="#{bindings.WrittersView1.hints.Wname.displayWidth}"
+                                maximumLength="#{bindings.WrittersView1.hints.Wname.precision}"
+                                shortDesc="#{bindings.WrittersView1.hints.Wname.tooltip}">
+                    <f:validator binding="#{row.bindings.Wname.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Wpass" sortable="false"
+                           headerText="PassWord">
+                  <af:inputText value="#{row.bindings.Wpass.inputValue}"
+                                label="#{bindings.WrittersView1.hints.Wpass.label}"
+                                required="#{bindings.WrittersView1.hints.Wpass.mandatory}"
+                                columns="#{bindings.WrittersView1.hints.Wpass.displayWidth}"
+                                maximumLength="#{bindings.WrittersView1.hints.Wpass.precision}"
+                                shortDesc="#{bindings.WrittersView1.hints.Wpass.tooltip}">
+                    <f:validator binding="#{row.bindings.Wpass.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Wemail" sortable="false"
+                           headerText="Email">
+                  <af:inputText value="#{row.bindings.Wemail.inputValue}"
+                                label="#{bindings.WrittersView1.hints.Wemail.label}"
+                                required="#{bindings.WrittersView1.hints.Wemail.mandatory}"
+                                columns="#{bindings.WrittersView1.hints.Wemail.displayWidth}"
+                                maximumLength="#{bindings.WrittersView1.hints.Wemail.precision}"
+                                shortDesc="#{bindings.WrittersView1.hints.Wemail.tooltip}">
+                    <f:validator binding="#{row.bindings.Wemail.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Wtpe" sortable="false"
+                           headerText="Type">
+                  <af:inputText value="#{row.bindings.Wtpe.inputValue}"
+                                label="#{bindings.WrittersView1.hints.Wtpe.label}"
+                                required="#{bindings.WrittersView1.hints.Wtpe.mandatory}"
+                                columns="#{bindings.WrittersView1.hints.Wtpe.displayWidth}"
+                                maximumLength="#{bindings.WrittersView1.hints.Wtpe.precision}"
+                                shortDesc="#{bindings.WrittersView1.hints.Wtpe.tooltip}">
+                    <f:validator binding="#{row.bindings.Wtpe.validator}"/>
+                  </af:inputText>
+                </af:column>
+              </af:table>
+            </af:showDetailItem>
+            <af:showDetailItem text="Sources"
+                               binding="#{backingBeanScope.backing_admin.showDetailItem3}"
+                               id="showDetailItem3">
+              <af:toolbar binding="#{backingBeanScope.backing_admin.toolbar3}"
+                          id="toolbar3">
+                <af:commandButton actionListener="#{bindings.CreateInsert2.execute}"
+                                  text="Add Source"
+                                  disabled="#{!bindings.CreateInsert2.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton9}"
+                                  id="commandButton9"
+                                  partialTriggers="table3 table5"
+                                  icon="/Add24.png"/>
+                <af:commandButton actionListener="#{bindings.Execute2.execute}"
+                                  text="Update"
+                                  disabled="#{!bindings.Execute2.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton11}"
+                                  id="commandButton11"
+                                  partialTriggers="table3 table2"
+                                  icon="/Refresh24.png"/>
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Save"
+                                  disabled="#{!bindings.Commit.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton12}"
+                                  id="commandButton12" icon="/Save24.png"/>
+                <af:commandButton actionListener="#{bindings.Delete2.execute}"
+                                  text="Delete Source"
+                                  disabled="#{!bindings.Delete2.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton10}"
+                                  id="commandButton10"
+                                  partialTriggers="table3 table5"
+                                  icon="/Delete24.png"/>
+              </af:toolbar>
+              <af:table value="#{bindings.SourcesView1.collectionModel}"
+                        var="row" rows="#{bindings.SourcesView1.rangeSize}"
+                        emptyText="#{bindings.SourcesView1.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.SourcesView1.rangeSize}"
+                        selectedRowKeys="#{bindings.SourcesView1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.SourcesView1.collectionModel.makeCurrent}"
+                        rowSelection="single"
+                        binding="#{backingBeanScope.backing_admin.table3}"
+                        id="table3" width="1256">
+                <af:column sortProperty="Sname" sortable="false"
+                           headerText="Name">
+                  <af:inputText value="#{row.bindings.Sname.inputValue}"
+                                label="#{bindings.SourcesView1.hints.Sname.label}"
+                                required="#{bindings.SourcesView1.hints.Sname.mandatory}"
+                                columns="#{bindings.SourcesView1.hints.Sname.displayWidth}"
+                                maximumLength="#{bindings.SourcesView1.hints.Sname.precision}"
+                                shortDesc="#{bindings.SourcesView1.hints.Sname.tooltip}">
+                    <f:validator binding="#{row.bindings.Sname.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Saddress" sortable="false"
+                           headerText="Address">
+                  <af:inputText value="#{row.bindings.Saddress.inputValue}"
+                                label="#{bindings.SourcesView1.hints.Saddress.label}"
+                                required="#{bindings.SourcesView1.hints.Saddress.mandatory}"
+                                columns="#{bindings.SourcesView1.hints.Saddress.displayWidth}"
+                                maximumLength="#{bindings.SourcesView1.hints.Saddress.precision}"
+                                shortDesc="#{bindings.SourcesView1.hints.Saddress.tooltip}">
+                    <f:validator binding="#{row.bindings.Saddress.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Stype" sortable="false"
+                           headerText="Type">
+                  <af:inputText value="#{row.bindings.Stype.inputValue}"
+                                label="#{bindings.SourcesView1.hints.Stype.label}"
+                                required="#{bindings.SourcesView1.hints.Stype.mandatory}"
+                                columns="#{bindings.SourcesView1.hints.Stype.displayWidth}"
+                                maximumLength="#{bindings.SourcesView1.hints.Stype.precision}"
+                                shortDesc="#{bindings.SourcesView1.hints.Stype.tooltip}">
+                    <f:validator binding="#{row.bindings.Stype.validator}"/>
+                  </af:inputText>
+                </af:column>
+              </af:table>
+            </af:showDetailItem>
+            <af:showDetailItem text="Administration"
+                               binding="#{backingBeanScope.backing_admin.showDetailItem4}"
+                               id="showDetailItem4">
+              <af:toolbar binding="#{backingBeanScope.backing_admin.toolbar4}"
+                          id="toolbar4">
+                <af:commandButton actionListener="#{bindings.CreateInsert3.execute}"
+                                  text="Add Admin"
+                                  disabled="#{!bindings.CreateInsert3.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton13}"
+                                  id="commandButton13"
+                                  partialTriggers="table4 table5" icon="/Add24.png"/>
+                <af:commandButton actionListener="#{bindings.Delete3.execute}"
+                                  text="Delete Admin"
+                                  disabled="#{!bindings.Delete3.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton14}"
+                                  id="commandButton14"
+                                  partialTriggers="table4 table5"
+                                  icon="/Delete24.png"/>
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Save"
+                                  disabled="#{!bindings.Commit.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton16}"
+                                  id="commandButton16" icon="/Save24.png"/>
+                <af:commandButton actionListener="#{bindings.Execute3.execute}"
+                                  text="Update"
+                                  disabled="#{!bindings.Execute3.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton15}"
+                                  id="commandButton15"
+                                  partialTriggers="table4 table2"
+                                  icon="/Refresh24.png"/>
+              </af:toolbar>
+              <af:table value="#{bindings.AdminView1.collectionModel}" var="row"
+                        rows="#{bindings.AdminView1.rangeSize}"
+                        emptyText="#{bindings.AdminView1.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.AdminView1.rangeSize}"
+                        selectedRowKeys="#{bindings.AdminView1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.AdminView1.collectionModel.makeCurrent}"
+                        rowSelection="single"
+                        binding="#{backingBeanScope.backing_admin.table4}"
+                        id="table4" width="1284">
+                <af:column sortProperty="Fname" sortable="false"
+                           headerText="FirstName">
+                  <af:inputText value="#{row.bindings.Fname.inputValue}"
+                                label="#{bindings.AdminView1.hints.Fname.label}"
+                                required="#{bindings.AdminView1.hints.Fname.mandatory}"
+                                columns="#{bindings.AdminView1.hints.Fname.displayWidth}"
+                                maximumLength="#{bindings.AdminView1.hints.Fname.precision}"
+                                shortDesc="#{bindings.AdminView1.hints.Fname.tooltip}">
+                    <f:validator binding="#{row.bindings.Fname.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Lname" sortable="false"
+                           headerText="LastName">
+                  <af:inputText value="#{row.bindings.Lname.inputValue}"
+                                label="#{bindings.AdminView1.hints.Lname.label}"
+                                required="#{bindings.AdminView1.hints.Lname.mandatory}"
+                                columns="#{bindings.AdminView1.hints.Lname.displayWidth}"
+                                maximumLength="#{bindings.AdminView1.hints.Lname.precision}"
+                                shortDesc="#{bindings.AdminView1.hints.Lname.tooltip}">
+                    <f:validator binding="#{row.bindings.Lname.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Uname" sortable="false"
+                           headerText="UserName">
+                  <af:inputText value="#{row.bindings.Uname.inputValue}"
+                                label="#{bindings.AdminView1.hints.Uname.label}"
+                                required="#{bindings.AdminView1.hints.Uname.mandatory}"
+                                columns="#{bindings.AdminView1.hints.Uname.displayWidth}"
+                                maximumLength="#{bindings.AdminView1.hints.Uname.precision}"
+                                shortDesc="#{bindings.AdminView1.hints.Uname.tooltip}">
+                    <f:validator binding="#{row.bindings.Uname.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Pass" sortable="false"
+                           headerText="PassWord">
+                  <af:inputText value="#{row.bindings.Pass.inputValue}"
+                                label="#{bindings.AdminView1.hints.Pass.label}"
+                                required="#{bindings.AdminView1.hints.Pass.mandatory}"
+                                columns="#{bindings.AdminView1.hints.Pass.displayWidth}"
+                                maximumLength="#{bindings.AdminView1.hints.Pass.precision}"
+                                shortDesc="#{bindings.AdminView1.hints.Pass.tooltip}">
+                    <f:validator binding="#{row.bindings.Pass.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Email" sortable="false"
+                           headerText="Email">
+                  <af:inputText value="#{row.bindings.Email.inputValue}"
+                                label="#{bindings.AdminView1.hints.Email.label}"
+                                required="#{bindings.AdminView1.hints.Email.mandatory}"
+                                columns="#{bindings.AdminView1.hints.Email.displayWidth}"
+                                maximumLength="#{bindings.AdminView1.hints.Email.precision}"
+                                shortDesc="#{bindings.AdminView1.hints.Email.tooltip}">
+                    <f:validator binding="#{row.bindings.Email.validator}"/>
+                  </af:inputText>
+                </af:column>
+              </af:table>
+            </af:showDetailItem>
+            <af:showDetailItem text="News"
+                               binding="#{backingBeanScope.backing_admin.showDetailItem5}"
+                               id="showDetailItem5">
+              <af:toolbar binding="#{backingBeanScope.backing_admin.toolbar5}"
+                          id="toolbar5">
+                <af:commandButton actionListener="#{bindings.Delete4.execute}"
+                                  text="Delete News"
+                                  disabled="#{!bindings.Delete4.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton18}"
+                                  id="commandButton18"
+                                  partialTriggers="table5"
+                                  icon="/Delete24.png"/>
+                <af:commandButton actionListener="#{bindings.Execute4.execute}"
+                                  text="Update"
+                                  disabled="#{!bindings.Execute4.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton19}"
+                                  id="commandButton19"
+                                  partialTriggers="table5 table2"
+                                  icon="/Refresh24.png"/>
+                <af:commandButton actionListener="#{bindings.CreateInsert4.execute}"
+                                  text="Add News"
+                                  disabled="#{!bindings.CreateInsert4.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton17}"
+                                  id="commandButton17"
+                                  partialTriggers="table5" action="addnews"
+                                  icon="/Add24.png"/>
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Save"
+                                  disabled="#{!bindings.Commit.enabled}"
+                                  binding="#{backingBeanScope.backing_admin.commandButton20}"
+                                  id="commandButton20" icon="/Save24.png"/>
+              </af:toolbar>
+              <af:table value="#{bindings.News1View1.collectionModel}" var="row"
+                        rows="#{bindings.News1View1.rangeSize}"
+                        emptyText="#{bindings.News1View1.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.News1View1.rangeSize}"
+                        selectedRowKeys="#{bindings.News1View1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.News1View1.collectionModel.makeCurrent}"
+                        rowSelection="single"
+                        binding="#{backingBeanScope.backing_admin.table5}"
+                        id="table5" width="1245">
+                <af:column sortProperty="Nid" sortable="false" headerText="ID">
+                  <af:inputText value="#{row.bindings.Nid.inputValue}"
+                                label="#{bindings.News1View1.hints.Nid.label}"
+                                required="#{bindings.News1View1.hints.Nid.mandatory}"
+                                columns="#{bindings.News1View1.hints.Nid.displayWidth}"
+                                maximumLength="#{bindings.News1View1.hints.Nid.precision}"
+                                shortDesc="#{bindings.News1View1.hints.Nid.tooltip}">
+                    <f:validator binding="#{row.bindings.Nid.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.News1View1.hints.Nid.format}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Sname" sortable="false"
+                           headerText="Source">
+                  <af:inputText value="#{row.bindings.Sname.inputValue}"
+                                label="#{bindings.News1View1.hints.Sname.label}"
+                                required="#{bindings.News1View1.hints.Sname.mandatory}"
+                                columns="#{bindings.News1View1.hints.Sname.displayWidth}"
+                                maximumLength="#{bindings.News1View1.hints.Sname.precision}"
+                                shortDesc="#{bindings.News1View1.hints.Sname.tooltip}">
+                    <f:validator binding="#{row.bindings.Sname.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Wname" sortable="false"
+                           headerText="Author">
+                  <af:inputText value="#{row.bindings.Wname.inputValue}"
+                                label="#{bindings.News1View1.hints.Wname.label}"
+                                required="#{bindings.News1View1.hints.Wname.mandatory}"
+                                columns="#{bindings.News1View1.hints.Wname.displayWidth}"
+                                maximumLength="#{bindings.News1View1.hints.Wname.precision}"
+                                shortDesc="#{bindings.News1View1.hints.Wname.tooltip}">
+                    <f:validator binding="#{row.bindings.Wname.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Tittle" sortable="false"
+                           headerText="Tiitle">
+                  <af:inputText value="#{row.bindings.Tittle.inputValue}"
+                                label="#{bindings.News1View1.hints.Tittle.label}"
+                                required="#{bindings.News1View1.hints.Tittle.mandatory}"
+                                columns="#{bindings.News1View1.hints.Tittle.displayWidth}"
+                                maximumLength="#{bindings.News1View1.hints.Tittle.precision}"
+                                shortDesc="#{bindings.News1View1.hints.Tittle.tooltip}">
+                    <f:validator binding="#{row.bindings.Tittle.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Img" sortable="false"
+                           headerText="ImageSrc">
+                  <af:inputText value="#{row.bindings.Img.inputValue}"
+                                label="#{bindings.News1View1.hints.Img.label}"
+                                required="#{bindings.News1View1.hints.Img.mandatory}"
+                                columns="#{bindings.News1View1.hints.Img.displayWidth}"
+                                maximumLength="#{bindings.News1View1.hints.Img.precision}"
+                                shortDesc="#{bindings.News1View1.hints.Img.tooltip}">
+                    <f:validator binding="#{row.bindings.Img.validator}"/>
+                  </af:inputText>
+                </af:column>
+                <af:column sortProperty="Ntype" sortable="false"
+                           headerText="Type">
+                  <af:inputText value="#{row.bindings.Ntype.inputValue}"
+                                label="#{bindings.News1View1.hints.Ntype.label}"
+                                required="#{bindings.News1View1.hints.Ntype.mandatory}"
+                                columns="#{bindings.News1View1.hints.Ntype.displayWidth}"
+                                maximumLength="#{bindings.News1View1.hints.Ntype.precision}"
+                                shortDesc="#{bindings.News1View1.hints.Ntype.tooltip}">
+                    <f:validator binding="#{row.bindings.Ntype.validator}"/>
+                  </af:inputText>
+                </af:column>
+              </af:table>
+            </af:showDetailItem>
+            <af:showDetailItem text="Statistics"
+                               binding="#{backingBeanScope.backing_admin.showDetailItem6}"
+                               id="showDetailItem6">
+              <af:toolbar binding="#{backingBeanScope.backing_admin.toolbar6}"
+                          id="toolbar6">
+                <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                  text="Refresh"
+                                  disabled="#{!bindings.Rollback.enabled}"
+                                  immediate="true"
+                                  binding="#{backingBeanScope.backing_admin.commandButton21}"
+                                  id="commandButton21" icon="/Refresh24.png"
+                                  partialTriggers="table2">
+                  <af:resetActionListener/>
+                </af:commandButton>
+              </af:toolbar>
+              <dvt:barGraph id="barGraph1"
+                            value="#{bindings.StatisticsView1.graphModel}"
+                            subType="BAR_VERT_CLUST"
+                            binding="#{backingBeanScope.backing_admin.barGraph1}"
+                            inlineStyle="width:879px; height:300px;">
+                <dvt:background>
+                  <dvt:specialEffects/>
+                </dvt:background>
+                <dvt:graphPlotArea/>
+                <dvt:seriesSet>
+                  <dvt:series/>
+                </dvt:seriesSet>
+                <dvt:o1Axis/>
+                <dvt:y1Axis/>
+                <dvt:legendArea automaticPlacement="AP_NEVER"/>
+              </dvt:barGraph>
+            </af:showDetailItem>
+          </af:panelTabbed>
+        </af:panelBox>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_admin-->
+</jsp:root>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="WritterType"
+  Version="11.1.1.51.56"
+  DBObjectType="table"
+  DBObjectName="WRITTER_TYPE"
+  AliasName="WritterType"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Type"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="TYPE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="WRITTER_TYPE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Desc1"
+    Precision="100"
+    ColumnName="DESC"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="WRITTER_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Writters"
+    Association="view.WrittersWritterTypeFk1Assoc"
+    AssociationEnd="view.WrittersWritterTypeFk1Assoc.Writters"
+    AssociationOtherEnd="view.WrittersWritterTypeFk1Assoc.WritterType"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SysC004152">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C004152"/>
+      <Attr Name="_checkCondition" Value='"TYPE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="view.WritterType.Type"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="WritterTypePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="WRITTER_TYPE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="view.WritterType.Type"/>
+    </AttrArray>
+  </Key>
+</Entity>

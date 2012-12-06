@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SourceTypeView"
+  Version="11.1.1.51.56"
+  SelectList="SourceType.TYPE, 
+       SourceType.DESC"
+  FromList="SOURCE_TYPE SourceType"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="SourceType"
+    Entity="view.SourceType"/>
+  <ViewAttribute
+    Name="Type"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Type"
+    EntityUsage="SourceType"
+    AliasName="TYPE"/>
+  <ViewAttribute
+    Name="Desc1"
+    PrecisionRule="true"
+    EntityAttrName="Desc1"
+    EntityUsage="SourceType"
+    AliasName="DESC"/>
+  <ViewLinkAccessor
+    Name="SourcesView"
+    ViewLink="view.SourcesSourceTypeFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

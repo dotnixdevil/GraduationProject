@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SourceType"
+  Version="11.1.1.51.56"
+  DBObjectType="table"
+  DBObjectName="SOURCE_TYPE"
+  AliasName="SourceType"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Type"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="TYPE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SOURCE_TYPE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Desc1"
+    Precision="100"
+    ColumnName="DESC"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SOURCE_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Sources"
+    Association="view.SourcesSourceTypeFk1Assoc"
+    AssociationEnd="view.SourcesSourceTypeFk1Assoc.Sources"
+    AssociationOtherEnd="view.SourcesSourceTypeFk1Assoc.SourceType"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SourceTypePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SOURCE_TYPE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="view.SourceType.Type"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC004109">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C004109"/>
+      <Attr Name="_checkCondition" Value='"TYPE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="view.SourceType.Type"/>
+    </AttrArray>
+  </Key>
+</Entity>

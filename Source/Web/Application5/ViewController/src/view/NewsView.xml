@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="NewsView"
+  Version="11.1.1.51.56"
+  SelectList="News.NID, 
+       News.SNAME, 
+       News.WNAME, 
+       News.TITTLE, 
+       News.SUBJECT, 
+       News.IMG, 
+       News.NTYPE"
+  FromList="NEWS News"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  Where="News.ntype='video'">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="News"
+    Entity="view.News"/>
+  <ViewAttribute
+    Name="Nid"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Nid"
+    EntityUsage="News"
+    AliasName="NID"/>
+  <ViewAttribute
+    Name="Sname"
+    PrecisionRule="true"
+    EntityAttrName="Sname"
+    EntityUsage="News"
+    AliasName="SNAME"/>
+  <ViewAttribute
+    Name="Wname"
+    PrecisionRule="true"
+    EntityAttrName="Wname"
+    EntityUsage="News"
+    AliasName="WNAME"/>
+  <ViewAttribute
+    Name="Tittle"
+    PrecisionRule="true"
+    EntityAttrName="Tittle"
+    EntityUsage="News"
+    AliasName="TITTLE"/>
+  <ViewAttribute
+    Name="Subject"
+    PrecisionRule="true"
+    EntityAttrName="Subject"
+    EntityUsage="News"
+    AliasName="SUBJECT"/>
+  <ViewAttribute
+    Name="Img"
+    PrecisionRule="true"
+    EntityAttrName="Img"
+    EntityUsage="News"
+    AliasName="IMG"/>
+  <ViewAttribute
+    Name="Ntype"
+    PrecisionRule="true"
+    EntityAttrName="Ntype"
+    EntityUsage="News"
+    AliasName="NTYPE"/>
+</ViewObject>

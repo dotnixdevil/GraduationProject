@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="NewsNewsTypeFk1Assoc"
+  Version="11.1.1.51.56">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="NewsType"
+    Cardinality="1"
+    Source="true"
+    Owner="view.NewsType">
+    <AttrArray Name="Attributes">
+      <Item Value="view.NewsType.Type"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="NewsType"/>
+      <Attr Name="_foreignKey" Value="view.NewsType.NewsTypePk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="News"
+    Cardinality="-1"
+    Owner="view.News">
+    <AttrArray Name="Attributes">
+      <Item Value="view.News.Ntype"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="News"/>
+      <Attr Name="_foreignKey" Value="view.News.NewsNewsTypeFk1"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </AssociationEnd>
+</Association>

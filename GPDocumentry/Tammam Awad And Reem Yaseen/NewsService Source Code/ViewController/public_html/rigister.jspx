@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <af:document binding="#{backingBeanScope.backing_rigister.document1}"
+                 id="document1" title="News Service Rigister">
+      <af:form binding="#{backingBeanScope.backing_rigister.form1}" id="form1">
+        <!-- Save for Web Slices (GPTemplate.psd) -->
+         
+        <table width="1024" height="769" border="0" align="center"
+               cellpadding="0" cellspacing="0" id="Table_01">
+          <tr>
+            <td colspan="14">
+              <img src="images/Template_01.jpg" width="1024" height="137"
+                   alt=""/>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="4">
+              <img src="images/Template_02.jpg" width="23" height="383" alt=""/>
+            </td>
+            <td colspan="3">
+              <a href="index.jspx" target="_self">
+                 
+                <img src="images/Template_03.jpg" width="118" height="39"
+                     border="0" alt=""/></a>
+            </td>
+            <td>
+              <a href="video.jspx" target="_self">
+                 
+                <img src="images/Template_04.jpg" width="131" height="39"
+                     border="0" alt=""/></a>
+            </td>
+            <td rowspan="2">
+              <img src="images/Template_05.jpg" width="3" height="85" alt=""/>
+            </td>
+            <td>
+              <a href="support.jspx" target="_self">
+                 
+                <img src="images/Template_06.jpg" width="131" height="39"
+                     border="0" alt=""/></a>
+            </td>
+            <td rowspan="2">
+              <img src="images/Template_07.jpg" width="3" height="85" alt=""/>
+            </td>
+            <td>
+              <a href="rigister.jspx" target="_self">
+                 
+                <img src="images/Template_08.jpg" width="126" height="39"
+                     border="0" alt=""/></a>
+            </td>
+            <td rowspan="2">
+              <img src="images/Template_09.jpg" width="3" height="85" alt=""/>
+            </td>
+            <td>
+              <a href="about.jspx" target="_self">
+                 
+                <img src="images/Template_10.jpg" width="133" height="39"
+                     border="0" alt=""/></a>
+            </td>
+            <td colspan="3" rowspan="2">
+              <img src="images/Template_11.jpg" width="353" height="85" alt=""/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <img src="images/Template_12.jpg" width="249" height="46" alt=""/>
+            </td>
+            <td>
+              <img src="images/Template_13.jpg" width="131" height="46" alt=""/>
+            </td>
+            <td>
+              <img src="images/Template_14.jpg" width="126" height="46" alt=""/>
+            </td>
+            <td>
+              <img src="images/Template_15.jpg" width="133" height="46" alt=""/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" rowspan="2">
+              <img src="images/Template_16.jpg" width="18" height="298" alt=""/>
+            </td>
+            <td colspan="9">
+              <object id="FlashID"
+                      classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                      width="936" height="243">
+                <param name="movie" value="Movie1.swf"/>
+                <param name="quality" value="high"/>
+                <param name="wmode" value="opaque"/>
+                <param name="swfversion" value="7.0.70.0"/>
+                <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+                <param name="expressinstall"
+                       value="Scripts/expressInstall.swf"/>
+                <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+                <!--[if !IE]>-->
+                <object type="application/x-shockwave-flash" data="Movie1.swf"
+                        width="936" height="243">
+                  <!--<![endif]-->
+                  <param name="quality" value="high"/>
+                  <param name="wmode" value="opaque"/>
+                  <param name="swfversion" value="7.0.70.0"/>
+                  <param name="expressinstall"
+                         value="Scripts/expressInstall.swf"/>
+                  <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+                  <div>
+                    <h4>
+                      Content on this page requires a newer version of Adobe
+                      Flash Player.
+                    </h4>
+                     
+                    <p>
+                      <a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
+                                                                            alt="Get Adobe Flash player"/></a>
+                    </p>
+                  </div>
+                  <!--[if !IE]>-->
+                </object>
+                <!--<![endif]-->
+              </object>
+            </td>
+            <td colspan="2" rowspan="2">
+              <img src="images/Template_18.jpg" width="47" height="298" alt=""/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="9">
+              <img src="images/Template_19.jpg" width="936" height="55" alt=""/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"
+                style="background-image:url(images/Template_20.jpg)"> </td>
+            <td rowspan="2">
+              <img src="images/Template_21.jpg" width="1" height="248" alt=""/>
+            </td>
+            <td colspan="9" align="left" valign="top"
+                style="background-image:url(images/Template_22.jpg)">
+              <p>
+                 
+              </p>
+              <fieldset>
+                <legend>
+                  Rigister: 
+
+                </legend>
+                <div align="left">
+                  <af:message binding="#{backingBeanScope.backing_rigister.message1}"
+                              id="message1" messageType="confirmation"/><strong><af:outputText value="FirstName:"
+                                                                                        binding="#{backingBeanScope.backing_rigister.outputText6}"
+                                                                                        id="outputText6"/></strong><af:inputText label="    "
+                                                                                                                binding="#{backingBeanScope.backing_rigister.inputText1}"
+                                                                                                                id="inputText1"/><strong><af:outputText value="LastName:"
+                                                                                                                                                        binding="#{backingBeanScope.backing_rigister.outputText1}"
+                                                                                                                                                        id="outputText1"/></strong><af:inputText label="    "
+                                                                                                                                                                                binding="#{backingBeanScope.backing_rigister.inputText2}"
+                                                                                                                                                                                id="inputText2"/><strong><af:outputText value="UserName:"
+                                                                                                                                                                                                                        binding="#{backingBeanScope.backing_rigister.outputText2}"
+                                                                                                                                                                                                                        id="outputText2"/></strong><af:inputText label=""
+                                                                                                                                                                                                                                                binding="#{backingBeanScope.backing_rigister.inputText3}"
+                                                                                                                                                                                                                                                id="inputText3"
+                                                                                                                                                                                                                                                required="true"
+                                                                                                                                                                                                                                                showRequired="false"/><strong><af:outputText value="PassWord:"
+                                                                                                                                                                                                                                                                                             binding="#{backingBeanScope.backing_rigister.outputText3}"
+                                                                                                                                                                                                                                                                                             id="outputText3"/></strong><af:inputText label=""
+                                                                                                                                                                                                                                                                                                                     binding="#{backingBeanScope.backing_rigister.inputText6}"
+                                                                                                                                                                                                                                                                                                                     id="inputText6"
+                                                                                                                                                                                                                                                                                                                     required="true"
+                                                                                                                                                                                                                                                                                                                     secret="true"
+                                                                                                                                                                                                                                                                                                                     showRequired="false"/><strong><af:outputText value="RePassWord:"
+                                                                                                                                                                                                                                                                                                                                                                  binding="#{backingBeanScope.backing_rigister.outputText4}"
+                                                                                                                                                                                                                                                                                                                                                                  id="outputText4"/></strong><af:inputText label=""
+                                                                                                                                                                                                                                                                                                                                                                                          binding="#{backingBeanScope.backing_rigister.inputText4}"
+                                                                                                                                                                                                                                                                                                                                                                                          id="inputText4"
+                                                                                                                                                                                                                                                                                                                                                                                          required="true"
+                                                                                                                                                                                                                                                                                                                                                                                          secret="true"
+                                                                                                                                                                                                                                                                                                                                                                                          showRequired="false"/><strong><af:outputText value="Email:"
+                                                                                                                                                                                                                                                                                                                                                                                                                                       binding="#{backingBeanScope.backing_rigister.outputText5}"
+                                                                                                                                                                                                                                                                                                                                                                                                                                       id="outputText5"/></strong><af:inputText label=""
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               binding="#{backingBeanScope.backing_rigister.inputText5}"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               id="inputText5"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               required="true"/><strong><af:outputText value="BirthDate:"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       binding="#{backingBeanScope.backing_rigister.outputText7}"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       id="outputText7"/></strong>
+                </div>
+                <div align="left">
+                  <af:inputDate label=""
+                                binding="#{backingBeanScope.backing_rigister.inputDate1}"
+                                id="inputDate1"/>
+                </div>
+                <p align="left">
+                                                               
+                  <af:commandButton text="Rigister"
+                                    binding="#{backingBeanScope.backing_rigister.commandButton1}"
+                                    id="commandButton1"
+                                    action="#{backingBeanScope.backing_rigister.commandButton1_action}"/>
+                </p>
+              </fieldset>
+              <p>
+                 
+              </p>
+              <p>
+                 
+              </p>
+              <p>
+                 
+              </p>
+              <p>
+                 
+              </p>
+            </td>
+            <td style="background-image:url(images/Template_23.jpg)"> </td>
+            <td rowspan="2">
+              <img src="images/Template_24.jpg" width="8" height="248" alt=""/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <img src="images/Template_25.jpg" width="40" height="121" alt=""/>
+            </td>
+            <td colspan="10">
+              <img src="images/Template_26.jpg" width="975" height="121"
+                   alt=""/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="images/spacer.gif" width="23" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="17" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="1" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="100" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="131" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="3" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="131" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="3" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="126" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="3" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="133" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="306" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="39" height="1" alt=""/>
+            </td>
+            <td>
+              <img src="images/spacer.gif" width="8" height="1" alt=""/>
+            </td>
+          </tr>
+        </table>
+         
+        <!-- End Save for Web Slices -->
+         
+        <script type="text/javascript">
+&lt;!--
+swfobject.registerObject("FlashID");
+//--&gt;
+</script>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_rigister-->
+</jsp:root>

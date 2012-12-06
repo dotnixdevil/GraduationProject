@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="NewsSourcesFk1Link"
+  Version="11.1.1.51.56"
+  EntityAssociation="view.NewsSourcesFk1Assoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="SourcesView"
+    Cardinality="1"
+    Owner="view.SourcesView"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SourcesView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="view.SourcesView.Sname"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="NewsView"
+    Cardinality="-1"
+    Owner="view.NewsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="NewsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="view.NewsView.Sname"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
